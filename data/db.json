@@ -1,0 +1,378 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products":
+  [
+    {
+      "productID":"1",
+      "name":"Činka",
+      "category":"accessory",
+      "price":"25",
+      "description":"25kg",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/d/i/dizajn_bez_n_zvu_-_2021-03-25t130335.483.png"
+    },
+    {
+      "productID":"2",
+      "name":"Švhiadlo",
+      "category":"accessory",
+      "price":"10",
+      "description":"1kg",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/m/e/metal-jumping-rope-silver-gymbeam_1_.jpg"
+    },
+    {
+      "productID":"3",
+      "name":"Teplaky",
+      "category":"men",
+      "size":["XL"],
+      "price":"15",
+      "description":"0.5kg",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/1/-/1-slimfit-black-sweatpants.jpg"
+      
+    },
+    {
+      "productID":"4",
+      "name":"Tričko Make Muscles Heather Purple - GymBeam",
+      "category":"men",
+      "size":["S","M"],
+      "price":"20",
+      "description":"Tričko Make Muscles vám vždy připomene, že na cestě za úspěchem neexistují žádné výmluvy. Při cvičení ho budete zbožňovat díky kvalitnímu materiálu a pohodlnému střihu. Při běžném nošení vás ještě více okouzlí jeho minimalistický design a syté barvy.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/m/a/make-muslces-not-excuses-purple-heather-gymbeam-1.jpg"
+      
+    },
+    {
+      "productID":"5",
+      "name":"Tričko Stay Strong Coral - GymBeam",
+      "category":"men",
+      "size":["S","M"],
+      "price":"15",
+      "description":"Tričko Stay Strong dokonale vyjadřuje odhodlání, díky němuž jste stále blíže ke svému cíli. Stylový design, sytá barva a kvalitní materiál jsou zárukou, že si toto tričko zamilujete na první pohled. Vyjádřete svou sílu a odhodlání s tričkem Stay Strong!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/t/-/t-shirt_stay_strong_coral_gymbeam_1.jpg"
+      
+    },
+    {
+      "productID":"6",
+      "name":"Mikina PRO Hoodie Black - GymBeam",
+      "category":"men",
+      "size":["S","M","L","XL"],
+      "price":"15",
+      "description":"Mikina PRO Hoodie vás příjemně zahřeje a zároveň ochrání před nepříznivým počasím. Je vyrobena z měkkého a kvalitního materiálu, který je vhodný na trénink i běžné nošení. Jde o kvalitní kousek, který ve svém šatníku ocení každý sportovec. ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/m/i/mikina-hoodie-pro-black_gymbeam_1_1.jpg"
+      
+    },
+    {
+      "productID":"7",
+      "name":"Mikina PRO Hoodie Burgundy - GymBeam",
+      "category":"men",
+      "size":["S","M","L","XL"],
+      "price":"15",
+      "description":"Mikina PRO Hoodie vás příjemně zahřeje a zároveň ochrání před nepříznivým počasím. Je vyrobena z měkkého a kvalitního materiálu, který je vhodný na trénink i běžné nošení. Jde o kvalitní kousek, který ve svém šatníku ocení každý sportovec. ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/p/r/pro-mikina-gymbeam-hoodie-burgundy-1.jpg"
+      
+    },
+    {
+      "productID":"8",
+      "name":"Tílko Hoodie Tank Top Black - GymBeam",
+      "category":"men",
+      "size":["S","M","L","XL"],
+      "price":"15",
+      "description":"Tílko Hoodie Tank Top Black je stylové tílko na cvičení s kapucí, které si vás podmaní jednoduchým, ale zároveň zajímavým designem. Příjemný materiál zajistí kvalitní bavlna ve spojení se syntetickými vlákny. Je vhodné na cvičení, ale málokdo mu odolá i při běžném nošení.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/h/o/hoodie-tanktop-black-1-gymbeam.jpg"
+      
+    },
+    {
+      "productID":"9",
+      "name":"Tílko Cut Off - GymBeam",
+      "category":"men",
+      "size":["S","M","L","XL"],
+      "price":"15",
+      "description":"Tílko Cut Off je trendy černé tílko ze 65% bavlny a 35% polyesteru, na hrudi obsahuje bílý nápis GymBeam a hluboké vykrojení po stranách v podpaží. Je vhodné na cvičení, i na běžné nošení. Nejlépe vypadá na atletických typech postavy.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/p/r/pro-mikina-gymbeam-hoodie-burgundy-1.jpg"
+      
+    },
+    {
+      "productID":"11",
+      "name":"Sportovní podprsenka Simple Turquoise - GymBeam",
+      "category":"women",
+      "size":["XS","M","L"],
+      "price":"25",
+      "description":"Sportovní podprsenka Simple je jednoduchý, ale praktický kousek, který by neměl chybět ve vašem šatníku. Dobře padne každé postavě, neškrtí, netlačí, právě naopak, budete se v ní cítit pohodlně a komfortně. Navíc dobře odvádí vlhkost od těla, čímž vás udrží v suchu během celého tréninku, a dodá prsům skvělou podporu. Pokud hledáte kvalitní sportovní podprsenku, tak jste našly tu pravou!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/t/u/turquoise-simple-sports-bra1.jpg"
+    },
+    {
+      "productID":"12",
+      "name":"Dámské legíny Simple Turquoise - GymBeam",
+      "size":["XS","S","M"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámské legíny Simple Turquoise jsou tyrkysové jednoduché legíny na cvičení, vyrobené z kvalitního elastického materiálu. Díky tomu nedráždí pokožku a jsou velmi odolné. Kromě toho jsou velmi příjemné na dotek a zevnitř trochu teplejší, ideální na jaro, podzim a zimu.Tento model má užší střih, proto doporučujeme zvolit o jedno číslo větší velikost, pokud preferujete volnější oblečení.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/t/u/turquoise-simple-leggings1_1.jpg"
+    },
+    {
+      "productID":"13",
+      "name":"Dámské legíny Black Silver - GymBeam",
+      "size":["XS","S","M"],
+      "category":"women",
+      "price":"35",
+      "description":"Dámské legíny Black Silver mají elegantní design, který je zvýrazněn černo-stříbrnou barvou. Kvalitní syntetická vlákna, z nichž jsou vyrobeny, zaručují dokonalou absorpci potu a jejich elasticita zase jedinečně vytvaruje vaši postavu. ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/g/y/gymbeam-leggings-black-silver-1.jpg"
+    },
+    {
+      "productID":"14",
+      "name":"Sportovní podprsenka Simple Black - GymBeam",
+      "size":["XS","S"],
+      "category":"women",
+      "price":"25",
+      "description":"Sportovní podprsenka Simple je jednoduchý, ale praktický kousek, který by neměl chybět ve vašem šatníku. Dobře padne každé postavě, neškrtí, netlačí, právě naopak, budete se v ní cítit pohodlně a komfortně. Navíc dobře odvádí vlhkost od těla, čímž vás udrží v suchu během celého tréninku, a dodá prsům skvělou podporu. Pokud hledáte kvalitní sportovní podprsenku, tak jste našly tu pravou!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/s/i/simple-black-sportsbra1.jpg"
+    },
+    {
+      "productID":"15",
+      "name":"Dámské tričko Basic Black - GymBeam",
+      "size":["XS","S","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámské tričko Basic je fitness tričko pro ženy, které chtějí být atraktivní i během tréninku. Má jednoduchý design a střih, proto je vhodné na jakoukoliv sportovní a volnočasovou aktivitu. Je vyrobeno z kvalitního materiálu 100% bavlny, proto se v něm budete cítit příjemně a žensky zároveň.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/b/a/basic_black_tee1.jpg"
+    },
+    {
+      "productID":"16",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"17",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"18",
+      "name":"Dámské legíny High Waist Labels - NEBBIA",
+      "size":["XS","S","L"],
+      "category":"women",
+      "price":"60",
+      "description":"Dámské legíny High Waist Labels jsou stylové fitness legíny s vysokým pasem vhodné na jakoukoliv sportovní aktivitu. Vyznačují se pevným, ale zato měkkým a poddajným materiálem, který nechá vyniknout váš štíhlý pas, vyrýsované nohy a vypracované pozadí. Ciťte se sebevědomě a pohodlně během tréninku i běžného dne!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/5/0/504_black_zoom_nebbia-leggings-1.jpg"
+    },
+    {
+      "productID":"19",
+      "name":"Ponožky 3/4 Socks 3Pack Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"13",
+      "description":"Ponožky ¾ Socks 3Pack Black obsahují 3 páry vysokých sportovních ponožek vhodných na trénink i běžné nošení. Jsou vyrobeny z měkkého poddajného materiálu, který vám zajistí maximální pohodlí na každém kroku.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/3/_/3_4_sock_black_gymbeam.png"
+    },
+    {
+      "productID":"20",
+      "name":"Šejkr černý 700 ml - GymBeam",
+      "category":"accessory",
+      "price":"13",
+      "description":"Šejkr černý s objemem 700 ml je vyroben z netoxického plastu. Obsahuje klasický závit a sítko na dokonalé rozmíchávání vašich oblíbených proteinů, předtréninkových stimulantů a kreatinů.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/s/h/shaker_black_gymbeam.jpg"
+    },
+    {
+      "productID":"21",
+      "name":"Kettlebell black - GymBeam",
+      "category":"accessory",
+      "price":"20",
+      "description":"Kettlebell je pomůcka pro domácí trénink, se kterou efektivně procvičíte celé tělo. Je vyrobený z kombinace železa a vinylu, což zaručuje maximální odolnost. Vybrat si můžete z několika hmotnostních variant tu, která vám bude nejvíc vyhovovat.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/k/e/kettlebell-black-gymbeam_4_.jpg"
+    },
+    {
+      "productID":"22",
+      "name":"Set odporových gum DuoBand - GymBeam",
+      "category":"accessory",
+      "price":"28",
+      "description":"Set odporových gum DuoBand tvoří set 4 pevných oboustranných posilovacích gum s různým stupněm odporu. Jsou ideální na procvičení celého těla, ale i jednotlivých svalových partií od rukou, hrudníku, břišních svalů, pozadí až po nohy. Efektivně posilují svaly, zlepšují flexibilitu a rozsah pohybu. ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/d/u/duoband_expanders_set_gymbeam.png"
+    },
+    {
+      "productID":"22",
+      "name":"Fit míč FitBall 85 cm - GymBeam",
+      "category":"accessory",
+      "price":"10",
+      "description":"Fit míč Fitball je fitness pomůcka, která zlepšuje celkovou stabilitu, rovnováhu a držení těla. Díky svému nestabilnímu povrchu vás donutí udržovat správné postavení pánve. Využijte výhod fit míče i vy!    ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/f/i/fitball_blue_85_cm_gymbeam2.png"
+    },
+    {
+      "productID":"23",
+      "name":"Bandáže na zápěstí - GymBeam",
+      "category":"accessory",
+      "price":"8",
+      "description":"Bandáže na zápěstí chrání klouby před zatížením a zraněním. Jsou univerzální velikosti a vyrobeny ze speciálně měkčeného elastického materiálu. Obsahují suchý zip, který povoluje nastavitelnost bandáže. Jsou pohodlné a vhodné pro jakýkoliv sport i na běžné použití.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/z/a/zapastia1_1.jpg"
+    },
+    {
+      "productID":"24",
+      "name":"Fitness opasek Jay - GymBeam",
+      "category":"accessory",
+      "price":"18",
+      "description":"Fitness opasek Jay je kvalitní opasek na cvičení vyrobený z umělé kůže. Pásek je ukončen mohutnou přezkou se dvěma trny. Je pevný, odolný a má dvojité prošití, což zajišťuje jeho dlouhou životnost. Dovolte mu, aby byl vaším sparing partnerem na cestě za vašimi úspěchy!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/p/r/produkt-4-front_1.jpg"
+    },
+    {
+      "productID":"25",
+      "name":"100% Kreatin monohydrát - GymBeam",
+      "category":"supplements",
+      "price":"20",
+      "description":"100% Kreatin monohydrát je populární zejména mezi silově cvičícími sportovci, příznivci HIIT či hráči kolektivních sportů. Využít ho však mohou všichni aktivní jedinci, pro které je důležitá rychlost, výbušnost a maximální síla. Kreatin je totiž schopný zvýšit výkonnost během krátkých po sobě jdoucích intervalech intenzivního tréninku. Abyste mohli těžit z jeho benefitů, je potřeba denně přijmout alespoň 3 g kreatinu. To jednou dávkou této směsi hravě splníte.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/c/r/creatinemonohydrate_500_1.jpg"
+    },
+    {
+      "productID":"26",
+      "name":"Předtréninkový stimulant Thor Fuel + Vitargo 600 g - GymBeam",
+      "category":"supplements",
+      "price":"25",
+      "description":"Předtréninkový stimulant Thor Fuel + Vitargo je nová formule silného předtréninkového stimulantu Thor doplněná o Vitargo® - patentovaný sacharid, který je výborným zdrojem rychlé energie pro zvýšení výkonu a doplnění zásob glykogenu. Nyní ještě rychleji dodává energii, nabudí, zbavuje únavy, podporuje svalovou vytrvalost a zlepšuje výkon. Pociťte sílu, nával energie a touhu posouvat své hranice! ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/t/h/thor_watermelon.png"
+    },
+    {
+      "productID":"27",
+      "name":"Protein Just Whey - GymBeam",
+      "category":"supplements",
+      "price":"35",
+      "description":"Just Whey je syrovátkový vícesložkový protein se 75%-ním podílem bílkovin z krav pasoucích se na pastvinách. Je ochucený pravým holandským kakaem a slazený i stévií. Pyšní se celým spektrem aminokyselin s různou rychlostí vstřebávání a vysokým podílem vitamínů a minerálů. Navíc je obohacen o trávicí enzymy - bromelain a DigeZyme®.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/j/u/just_whey_unflavored_1_kg_gymbeam_1.png"
+    },
+    {
+      "productID":"28",
+      "name":"Arašídové máslo 100% - GymBeam",
+      "category":"snacks",
+      "price":"8",
+      "description":"Arašídové máslo 100% je lahodné přírodní máslo tvořené pouze praženými arašídy. Vyniká svou skvělou chutí a krémovou konzistencí, díky které si ho můžete namazat na pečivo, přidat do kaše nebo ujídat samostatně. Je skvělým zdrojem nejen zdravých tuků, ale i bílkovin. Neobsahuje umělé látky ani přidaný cukr, a tak si na něm s mírou můžete pochutnat i při hubnutí.  ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/p/e/peanut_butter_crunchy_340g.png"
+    },
+    {
+      "productID":"29",
+      "name":"Mandlové máslo s kokosem a bílou čokoládou - GymBeam",
+      "category":"snacks",
+      "price":"8",
+      "description":"Mandlové máslo s kokosem a bílou čokoládou je chutné oříškové máslo, vyrobené z loupaných mandlí, kokosu a bílé čokolády. Je zdrojem bílkovin, vlákniny a nenasycených tuků. Má krémovou konzistenci a výborně vám dochutí proteinový nápoj, tvaroh, jogurt, kaši nebo cokoliv z vašich zdravých receptů.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/l/almond_butter.png"
+    },
+    {
+      "productID":"30",
+      "name":"Proteinová tyčinka MoiMüv - GymBeam",
+      "category":"snacks",
+      "price":"2",
+      "description":"Proteinová tyčinka MoiMüv obsahuje až 23 g bílkovin, a proto je ideálním proteinovým snackem, který vás zasytí a zároveň doplní bílkoviny. Má nízký obsah cukrů a přes 7 g vlákniny, proto si ji můžete dopřát kdykoliv během dne. ",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/m/o/moimuv_protein_bar_cookie___cream_60_g_gymbeam_1.png"
+    },
+    {
+      "productID":"31",
+      "name":"Proteinová tyčinka PureBar - GymBeam",
+      "category":"supplements",
+      "price":"2.50",
+      "description":"Protein PureBar je chutná proteinová tyčinka, která obsahuje minimum sacharidů, naopak se může pochlubit 22,3 g proteinu z mléčné bílkoviny a 13,9 g vlákniny. Proteinová tyčinka PureBar vám dopřeje pocit sytosti na delší dobu, proto je ideální pomocník na cesty, jako svačina, nebo i po tréninku na posílení regenerace.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/p/r/protein_oreo_purebar_1200x1200_biele.jpg"
+    },{
+      "productID":"16",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"17",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"18",
+      "name":"Dámské legíny High Waist Labels - NEBBIA",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"60",
+      "description":"Dámské legíny High Waist Labels jsou stylové fitness legíny s vysokým pasem vhodné na jakoukoliv sportovní aktivitu. Vyznačují se pevným, ale zato měkkým a poddajným materiálem, který nechá vyniknout váš štíhlý pas, vyrýsované nohy a vypracované pozadí. Ciťte se sebevědomě a pohodlně během tréninku i běžného dne!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/5/0/504_black_zoom_nebbia-leggings-1.jpg"
+    },{
+      "productID":"16",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"17",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"18",
+      "name":"Dámské legíny High Waist Labels - NEBBIA",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"60",
+      "description":"Dámské legíny High Waist Labels jsou stylové fitness legíny s vysokým pasem vhodné na jakoukoliv sportovní aktivitu. Vyznačují se pevným, ale zato měkkým a poddajným materiálem, který nechá vyniknout váš štíhlý pas, vyrýsované nohy a vypracované pozadí. Ciťte se sebevědomě a pohodlně během tréninku i běžného dne!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/5/0/504_black_zoom_nebbia-leggings-1.jpg"
+    },{
+      "productID":"16",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"17",
+      "name":"Dámská mikina Athlete Black - GymBeam",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"25",
+      "description":"Dámská mikina Athlete Black bude vaším společníkem na cestě za splněním vašich fitness cílů. Díky kvalitnímu materiálu si ji během tréninku zamilujete a stylový design s kapucí vám dokonale padne i na běžné nošení. Díky nápisu GymBeam budete zároveň reprezentovat svůj životní styl.",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/a/t/athlete-hoodie-womens-gymbeam1_1_.jpg"
+    },
+    {
+      "productID":"18",
+      "name":"Dámské legíny High Waist Labels - NEBBIA",
+      "size":["XS","S","M","L"],
+      "category":"women",
+      "price":"60",
+      "description":"Dámské legíny High Waist Labels jsou stylové fitness legíny s vysokým pasem vhodné na jakoukoliv sportovní aktivitu. Vyznačují se pevným, ale zato měkkým a poddajným materiálem, který nechá vyniknout váš štíhlý pas, vyrýsované nohy a vypracované pozadí. Ciťte se sebevědomě a pohodlně během tréninku i běžného dne!",
+      "image":"https://gymbeam.cz/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/5/0/504_black_zoom_nebbia-leggings-1.jpg"
+    }
+
+
+
+
+  ]
+
+}
+
+ 
