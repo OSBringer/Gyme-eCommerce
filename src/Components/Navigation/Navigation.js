@@ -12,9 +12,10 @@ const Navigation = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     useEffect(() => {
       let count=0;
-      cart.forEach(element => {
-          count+= element.quantity;
-      });
+    cart.forEach(element => {
+        if(element)
+            count+= parseInt(element.quantity);
+    });
       setCartCount(count);
     }, [cart])
 

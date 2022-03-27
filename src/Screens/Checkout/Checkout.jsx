@@ -1,46 +1,82 @@
-import React from 'react'
+import {React , useState} from 'react'
 import Product from '../../Components/Product/Product';
-import {useSelector} from "react-redux";
-import {Box,Container,Paper ,Grid,Link, Button} from '@mui/material';
-
+import {useSelector,useDispatch} from "react-redux";
+import {Box,Container,Paper ,Grid,Link,TextField, Button} from '@mui/material';
+import Detail from '../../Components/Detail/Detail';
+import { addToCart } from '../../features/cart/cartSlice';
 
 const Checkout = ({setStepper}) => {
+
+    
     const cartProduct=useSelector((state)=>state.cart.cart)
+    const dispatch = useDispatch()
+    const [openDetail,setOpenDetail]= useState({
+        open:false,
+        product:null
+    });
+    const handleDetail=(x)=>{
+        setOpenDetail({...openDetail,open:!openDetail.open,product:x});
+    }
+
+    const handleQuantity =(e)=>{
+        dispatch(addToCart(e))
+    }
+
     const getTotal =()=>{
         let total=0;
         cartProduct.map(obj=>(
-        total+=parseInt(obj.price)*obj.quantity
+            total+=parseInt(obj.price)*obj.quantity
         ))
         return total;
     }
+
+
+
+
+
     return (
         <Container maxWidth="full" >
-        { cartProduct &&// 👈 null and undefined check
+        <Detail product={openDetail.product}  open={openDetail.open} handleDetail={handleDetail}/>
+        {   cartProduct &&// 👈 null and undefined check
             Object.keys(cartProduct).length !== 0 ?
             //conditional render if there are items in the basket
             <Grid container  justifyContent="space-between"  columns={2}>
             <Grid item key={1}>
             {cartProduct.map((obj,index) => (
-            <Box 
-            key={index}
-            sx={{ 
-                bgcolor:"background.secondary", 
-                display:"flex",
-                flexDirection:"row",
-                alignItems:"center", 
-                maxWidth:"50vw",
-                border:1,
-                borderRadius:"0 2vw 2vw 0px",
-                margin:4
-            }}>
-                <Product cartScreen={true} product={obj}/>
-                <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignContent:"space-around",marginLeft:"auto",textAlign:"start"}}>
-                {obj.size && <p><b>Size:</b> {obj.selectedSize}</p>}
-                <p><b>Quantity:</b> {obj.quantity}</p>
-                <p><b>Price: </b>{obj.price}$</p>
+                <Box 
+                key={index}
+                sx={{ 
+                    bgcolor:"background.secondary", 
+                    display:"flex",
+                    flexDirection:"row",
+                    alignItems:"center", 
+                    maxWidth:"50vw",
+                    border:1,
+                    borderRadius:"0 2vw 2vw 0px",
+                    margin:4
+                }}>
+                    <Product openDetail={(productDetail)=>handleDetail(productDetail)} cartScreen={true} product={obj}/>
+                    <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignContent:"space-around",marginLeft:"auto",textAlign:"start"}}>
+                    {obj.size && <p><b>Size:</b> {obj.selectedSize}</p>}
+                    <div style={{display:"flex",flexDirection:"row",alignItems:"center",height:"4vh"}}>
+                            <TextField
+                                id="quantity"
+                                label="Count"
+                                size='small'
+                                type="number"
+                                value={obj.quantity}
+                                defaultValue={obj.quantity}
+                                onChange={(e)=>handleQuantity(Object.assign({quantity:e.target.value},obj,{quantity:e.target.value}))}
+                                inputProps={{
+                                    min:1
+                                }}
+                            />
+                    </div>
+                    <p><b>Price: </b>{obj.price}$</p>
+                    </Box>
                 </Box>
-            </Box>
-            ))}
+            ))
+            }
             </Grid>
             <Grid item key={2}>
             <Paper sx={{

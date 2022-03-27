@@ -14,7 +14,6 @@ const Cart = () => {
   const location = useLocation();
   const category=location.pathname.split("/cart/").filter(element => element)
   const [stepper,setStepper]=useState(1);
-
   const RenderStep = () => {
     let component= <Checkout/>;
     switch(category[0]){

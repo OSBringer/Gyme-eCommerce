@@ -20,6 +20,7 @@ const Products = ({products,pageCount}) => {
   const query = new URLSearchParams(location.search);
   const page = parseInt(query.get('page') || '1', 10);
   const category=location.pathname.split("/")
+
   const handleSnackbar=(type)=>{
     setSnackbarType(type);
     setOpenSnackbar(true);
@@ -42,14 +43,7 @@ const Products = ({products,pageCount}) => {
   return (
     <Container maxWidth={"full"} sx={{bgcolor:"background.default"}}>
         <Navigation/>
-        <Backdrop
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={openDetail.open}
-          onClick={handleDetail}
-          >
-          <Detail close={()=>setOpenDetail({...openDetail,open:!openDetail.open})}
-          product={openDetail.product} showSnackbar={handleSnackbar}/>
-        </Backdrop>
+        <Detail product={openDetail.product} showSnackbar={handleSnackbar} open={openDetail.open} handleDetail={handleDetail}/>
         <Box sx={{ marginTop:"2vh",marginRight:"auto",marginLeft:"auto",flexDirection:"column",maxWidth:"50vw"}}>
               <Grid
                 container

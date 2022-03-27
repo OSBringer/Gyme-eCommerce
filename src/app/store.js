@@ -16,7 +16,18 @@ const persistConfig = {
   key: 'root',
   storage
 };
-const persistedReducer = persistReducer(persistConfig, reducers);
+
+const rootReducer = (state, action) => {
+  //return reducers(undefined, action);
+  // if(action.type==='editQuantity'){
+  //   storage.removeItem('persist:root')
+  //   return reducers(undefined, action);
+    
+  // }
+  return reducers(state, action);
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
