@@ -26,6 +26,16 @@ const Address = ({confirmationScreen}) => {
     setRedirect(true);
   }
 
+  const getTotal =()=>{
+    let total=0;
+    cartProducts.map(obj=>(
+        total+=parseInt(obj.price)*obj.quantity
+    ))
+    return total;
+  }
+
+
+
   return (
     <Container maxWidth="full">
       <Grid  sx={{alignItems:"center",justifyContent:"space-between"}}container columns={2}>
@@ -34,6 +44,7 @@ const Address = ({confirmationScreen}) => {
           <fieldset style={{minWidth:"40vw",gap:3,display:"flex",flexDirection:"column"}}disabled={confirmationScreen}>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               disabled={confirmationScreen}
               required
               label="EMAIL"
@@ -45,6 +56,7 @@ const Address = ({confirmationScreen}) => {
           </FormControl>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               required
               disabled={confirmationScreen}
               inputProps={{ pattern:"[^0-9]+"}}
@@ -56,6 +68,7 @@ const Address = ({confirmationScreen}) => {
             </FormControl>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               required
               disabled={confirmationScreen}
               inputProps={{ pattern:"[^0-9]+"}}
@@ -67,6 +80,7 @@ const Address = ({confirmationScreen}) => {
             </FormControl>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               disabled={confirmationScreen}
               required
               label="ADDRESS"
@@ -77,6 +91,7 @@ const Address = ({confirmationScreen}) => {
             </FormControl>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               inputProps={{ pattern:"[^0-9]+"}}
               required
               disabled={confirmationScreen}
@@ -88,6 +103,7 @@ const Address = ({confirmationScreen}) => {
             </FormControl>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               required
               disabled={confirmationScreen}
               label="ZIP"
@@ -99,6 +115,7 @@ const Address = ({confirmationScreen}) => {
             </FormControl>
             <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              sx={{bgcolor:"background.secondary"}}
               required
               disabled={confirmationScreen}
               label="PHONE"
@@ -136,12 +153,14 @@ const Address = ({confirmationScreen}) => {
             marginTop:{xs:2,md:0},
             padding:0.5,
             }} item >
-            <span ><b>Summary</b></span>
+            <span style={{borderBottom:2}}><b>Summary</b></span>
             <span>
-            {cartProducts.map(obj=>{
-              return <div><b>{obj.quantity}x</b> {obj.name} {obj.selectedSize}</div>
-            })}
+              {cartProducts.map(obj=>{
+                return <div><b>{obj.quantity}x</b> {obj.name} {obj.selectedSize}</div>
+              })}
             </span>
+            <Box sx={{borderBottom:2,width:"100%", height:"fit-content",borderColor:"black"}} ><b>Total</b></Box>
+            <h2>{getTotal()}$</h2>
           </Grid>
         </Grid>
     </Container>

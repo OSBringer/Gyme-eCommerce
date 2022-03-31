@@ -12,28 +12,15 @@ const Products = ({products,pageCount}) => {
       open:false,
       product:null
   });
-
-  const [snackbarType,setSnackbarType]=useState("success");
-  const [openSnackbar,setOpenSnackbar]=useState(false);
   const dispatch = useDispatch();
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const page = parseInt(query.get('page') || '1', 10);
   const category=location.pathname.split("/")
 
-  const handleSnackbar=(type)=>{
-    setSnackbarType(type);
-    setOpenSnackbar(true);
-  }
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpenSnackbar(false);
-  };
-
-  const handleDetail=(x)=>{
-    setOpenDetail({...openDetail,open:!openDetail.open,product:x});
+  const handleDetail=(e)=>{
+    
+    setOpenDetail({...openDetail,open:!openDetail.open,product:e});
   }
   useEffect(() => {
     dispatch(getProducts(`products?category=${category[category.length -1]}&_page=${page}&_limit=12`))
@@ -43,7 +30,7 @@ const Products = ({products,pageCount}) => {
   return (
     <Container maxWidth={"full"} sx={{bgcolor:"background.default"}}>
         <Navigation/>
-        <Detail product={openDetail.product} showSnackbar={handleSnackbar} open={openDetail.open} handleDetail={handleDetail}/>
+        <Detail product={openDetail.product} open={openDetail.open} handleDetail={handleDetail}/>
         <Box sx={{ marginTop:"2vh",marginRight:"auto",marginLeft:"auto",flexDirection:"column",maxWidth:"50vw"}}>
               <Grid
                 container
@@ -70,11 +57,11 @@ const Products = ({products,pageCount}) => {
                   />
                 )}/>
           </Box>
-          <Snackbar open={openSnackbar} autoHideDuration={4000} onClose={handleClose}>
+          {/* <Snackbar open={openSnackbar} autoHideDuration={4000} onClose={handleClose}>
             <Alert onClose={handleClose} severity={snackbarType} sx={{ width: '100%' }}>
               {snackbarType==="success" ? "Succesfully added to cart": "Please select valid quantity and size" }
             </Alert>
-          </Snackbar>
+          </Snackbar> */}
     </Container>
   )
 }

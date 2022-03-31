@@ -6,8 +6,6 @@ import Detail from '../../Components/Detail/Detail';
 import { addToCart } from '../../features/cart/cartSlice';
 
 const Checkout = ({setStepper}) => {
-
-    
     const cartProduct=useSelector((state)=>state.cart.cart)
     const dispatch = useDispatch()
     const [openDetail,setOpenDetail]= useState({
@@ -21,7 +19,7 @@ const Checkout = ({setStepper}) => {
     const handleQuantity =(e)=>{
         dispatch(addToCart(e))
     }
-
+    //returns total number from price of products in the cart
     const getTotal =()=>{
         let total=0;
         cartProduct.map(obj=>(
@@ -29,13 +27,8 @@ const Checkout = ({setStepper}) => {
         ))
         return total;
     }
-
-
-
-
-
     return (
-        <Container maxWidth="full" >
+        <Container sx={{maxWidth:"2000px"}}maxWidth="2000px" >
         <Detail product={openDetail.product}  open={openDetail.open} handleDetail={handleDetail}/>
         {   cartProduct &&// 👈 null and undefined check
             Object.keys(cartProduct).length !== 0 ?
@@ -56,9 +49,9 @@ const Checkout = ({setStepper}) => {
                     margin:4
                 }}>
                     <Product openDetail={(productDetail)=>handleDetail(productDetail)} cartScreen={true} product={obj}/>
-                    <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignContent:"space-around",marginLeft:"auto",textAlign:"start"}}>
-                    {obj.size && <p><b>Size:</b> {obj.selectedSize}</p>}
-                    <div style={{display:"flex",flexDirection:"row",alignItems:"center",height:"4vh"}}>
+                    <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignContent:"space-between",marginLeft:"auto",textAlign:"start"}}>
+                    {obj.size && <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}><b>Size: </b>{obj.selectedSize}</Box>}
+                    <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
                             <TextField
                                 id="quantity"
                                 label="Count"
@@ -72,7 +65,7 @@ const Checkout = ({setStepper}) => {
                                 }}
                             />
                     </div>
-                    <p><b>Price: </b>{obj.price}$</p>
+                    <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}><b>Price: </b>{obj.price}$</Box>
                     </Box>
                 </Box>
             ))

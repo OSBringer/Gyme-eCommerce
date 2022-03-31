@@ -1,13 +1,27 @@
 import {React,useState,useEffect} from 'react'
 import {Close,AddShoppingCart} from '@mui/icons-material';
-import {IconButton,Box,Container,Backdrop,Button,Select,MenuItem,InputLabel,FormControl,TextField} from '@mui/material';
+import {IconButton,Box,Container,Backdrop,Button,Select,MenuItem,InputLabel,FormControl,TextField,Snackbar,Alert,CircularProgress} from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import  {addToCart} from '../../features/cart/cartSlice';
-import { JSON } from 'mysql/lib/protocol/constants/types';
-import Products from '../../Screens/Products/Products';
-const Detail = ({product,open,handleDetail,showSnackbar}) => {
-    const [size,setSize]=useState("");  
+import PropTypes from "prop-types";
+
+import style from "./Detail.module.scss"
+const Detail = ({product,open,handleDetail}) => {
+    const [size,setSize]=useState("");
     const [qty,setQty]=useState(1);
+    const [snackbarType,setSnackbarType]=useState("success");
+    const [openSnackbar,setOpenSnackbar]=useState(false);
+    const [errorVisivle,setErrorVisible]= useState(false);
+    const handleSnackbar=(type)=>{
+        setSnackbarType(type);
+        setOpenSnackbar(true);
+    }
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setOpenSnackbar(false);
+    };
     let copyProduct ;
     const handleSetSize=(e)=>{
         setSize(e.target.value);
@@ -22,11 +36,20 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
     }, [product])
 
     const dispatch = useDispatch();
+
+    const getError = () => {
+        setErrorVisible(false)
+        const timer = setTimeout(() => {
+            setErrorVisible(true)
+        }, 1000);
+        return () => clearTimeout(timer);
+    }
     return (
+        <>
         <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-            open={open}
-            onClick={handleDetail}
+            open={ product && open}
+            onClick={()=>handleDetail()}
         >
             <Container 
             sx={{
@@ -35,10 +58,12 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                     display:"block",
                 },
                 maxWidth:"90vw",
+                borderRadius:"0.5vw",
                 minWidth:"80vw",
-                height:"80%",
+                maxHeight:"85%",
+                height:"fit-content",
                 zIndex:"2",
-                bgcolor:"background.default",
+                bgcolor:"background.secondary",
                 position:"fixed",
                 margin:"auto",
                 left: 0,
@@ -46,25 +71,31 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                 top:0,
                 bottom:0
             }}
-            onClick={e=>e.stopPropagation()}
+                onClick={e=>e.stopPropagation()}
             >
                 {product ?
                 <Container 
                 sx={{display:"inherit",
+                    flexWrap:"wrap",
+                    marginTop:"2vh",
                     alignSelf:"center",
                     alignContent:"center",
                     width:"100%",
                     maxHeight:"100%",
                     justifyContent:"center",
                     color:"text.primary",
-                    gridTemplateColumns:"  1fr 1fr 1fr ",
+                    gridTemplateColumns:{sm:"  1fr 2fr ",lg:"1fr 1fr 1fr "},
                     gridTemplateRows:"1fr 1fr ",
                 }}>
-                    <div style={{gridColumn:"1",width:"100%",fontSize:"1.5vh",display:"flex",flexDirection:"column"}}>
-                    <img src={product.image} style={{width:"25vw",maxWidth:"40vw",margin:"auto",maxHeight:"40vw"}}/>
-                        <p >{product.name}</p>
+                    <div style={{display:"block",gridColumn:"1",width:"100%",fontSize:"2vh",display:"flex",flexDirection:"column"}}>
+                        <img
+                            className={style.productImage}
+                            src={product.image}
+                            style={{width:"25vw",maxWidth:"inherit",margin:"auto",height:"auto"}}
+                        />
+                            <text className={style.productName} >{product.name } </text>
                     </div>
-                    <Box sx={{display:"flex",flexDirection:"column",gridRow:{lg:1,xl:2},gridColumn:{lg:2,xl:1}}}>
+                    <Box sx={{display:"flex",flexDirection:"column",height:"fit-content",gap:1,gridRow:{lg:1,xl:2},gridColumn:{xs:2,lg:2,xl:1}}}>
                         {product.size &&
                         <FormControl sx={{marginTop:"2vh" ,minWidth:"10vw"}}>
                             <InputLabel id="demo-simple-select-label">Size</InputLabel>
@@ -78,11 +109,13 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                                 {product.size&& product.size.map((item)=>(
                                     <MenuItem key={item} value={item}>{item}</MenuItem>
                                 ))
-                                } 
+                                }
                             </Select>
                         </FormControl>
                         }
+                        <Box sx={{display:"flex",alignItems:"center"}}>
                             <TextField
+                                sx={{width:"80%"}}
                                 id="quantity"
                                 label="Count"
                                 size='small'
@@ -95,6 +128,8 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                                     min:1
                                 }}
                             />
+                            {qty ? <b style={{width:"20%"}}>{parseFloat(product.price*qty) }$</b>: <a style={{fontSize:"1vw",color:"red"}}>Select amount</a>}
+                          </Box>
                             <Button 
                             sx={{maxHeight:"5vh"}}
                                 size='large' 
@@ -103,8 +138,8 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                                 copyProduct = Object.assign({quantity:parseInt(qty),selectedSize:size}, product,{quantity:parseInt(qty),selectedSize:size})
                                 qty>=1 &&(!product.size || size!=="") ?
                                     dispatch(addToCart(copyProduct))&&
-                                    showSnackbar("success")
-                                    :showSnackbar("error")
+                                    handleSnackbar("success")
+                                    :handleSnackbar("error")
                                     }
                                 }
                             >
@@ -112,23 +147,33 @@ const Detail = ({product,open,handleDetail,showSnackbar}) => {
                             </Button>
                         </Box>
                 <Box >
-                    <Box  sx={{textAling:"end",fontSize:"1.2vh",minWidth:"20vw",maxWidth:"auto",gridColumnStart:"3"}}>
+                    <Box  sx={{display:"block",padding:"1vw",textAling:"left",fontSize:"1.5vh",minWidth:"20vw",maxWidth:"auto",gridColumnStart:"3"}}>
                         {product.description}
-                    </Box>
-                    <Box component="form" sx={{display:"flex",alignSelf:"flex-end",marginTop:"auto",justifyContent:"center"}}>
                     </Box>
                 </Box>
                 </Container>
                 :
-            
-                <Box sx={{color:"error.main"}}>Error: Cannot load product</Box>}
-                <IconButton  onClick={handleDetail} sx={{width:"2vh",position:"absolute"}}component="span">
+                <Box sx={{color:"error.main"}}>{errorVisivle ? "Error : Could not load product" : <CircularProgress/>}</Box>}
+                <IconButton  onClick={handleDetail} sx={{width:"2vh",position:"absolute",top:0,right:"1vw"}}component="span">
                     < Close sx={{fontSize:"1.9vh"}} />
                 </IconButton>
             </Container>
         </Backdrop>
-
+        <Snackbar open={openSnackbar} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity={snackbarType} sx={{ width: '100%' }}>
+              {snackbarType==="success" ? "Succesfully added to cart": "Please select valid quantity and size" }
+            </Alert>
+          </Snackbar>
+        </>
     )
 }
+
+Detail.propTypes=   {
+    product: PropTypes.object
+}
+
+Detail.defaultProps = {
+    product: null
+};
 
 export default Detail

@@ -15,7 +15,7 @@ const Banner = ({href,image,text}) => {
                 borderRadius:"1vh", 
                 bgcolor:"secondary.main"}}>
                 <img style={{maxHeight:"8vh"}}src={image?images(image):images("./protein-bar (Small).png")}/>
-                <Typography  sx={{color:"text.primary" ,fontSize:"3vh"}}>
+                <Typography  sx={{color:"text.primary" ,fontSize:"2rem"}}>
                 {text}
                 </Typography>
         </Box>

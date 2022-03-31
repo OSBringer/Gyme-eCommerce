@@ -1,0 +1,10 @@
+.productImage{
+    @media(orientation: portrait) {
+        width: 60vw !important;
+        max-width: 80vw !important;
+    }
+}
+.productName{
+    border: solid #000 !important;
+    border-width: 0px 0px 0.3vh 0px !important;
+}

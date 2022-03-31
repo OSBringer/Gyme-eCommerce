@@ -1,9 +1,9 @@
 import {React,useState,useEffect} from 'react'
-import {Box,Backdrop,Skeleton ,Grid,Item ,Button,Typography} from '@mui/material';
+import {Box,Skeleton ,Grid,Item,Typography,Button} from '@mui/material';
 import {AddShoppingCart,Delete} from '@mui/icons-material';
 import  {addToCart, removeFromCart} from '../../features/cart/cartSlice';
 import { useDispatch,useSelector } from 'react-redux';
-import Detail from '../../Components/Detail/Detail';
+
 const Product = ({openDetail,product,cartScreen}) => {
   const fetchStatus=useSelector((state)=>state.cart.status)
   const [frameWidth,setFrameWidth]= useState('100%');
@@ -19,9 +19,10 @@ const Product = ({openDetail,product,cartScreen}) => {
     sx={{
       display:"flex",
       boxShadow:10,
-      bgcolor:"background.default",
+      bgcolor:"background.secondary",
       flexDirection:"column",
       alignItems:"center",
+      maxWidth:"800px",
       width:frameWidth,
       borderBottom:1,
       borderLeft:1,
@@ -30,7 +31,7 @@ const Product = ({openDetail,product,cartScreen}) => {
       }}>
       <a onClick={()=>openDetail(product)}>
         <img style={{ width:"100%",maxWidth:"inherit",height:"auto"}} src={product.image} />
-        <Box sx={{ display:"flex",alignItems:"center", height:"10vh",
+        <Box sx={{ display:"flex",alignItems:"center",justifyContent:"center", height:"10vh",
         "@media(orientation:portrait)":{
           fontSize:"1.3vh"
         },
@@ -46,15 +47,23 @@ const Product = ({openDetail,product,cartScreen}) => {
           <Box sx={{display:{xs:"none",md:"block"}}}>Remove</Box>
         </Button>
       :
-        //products screen
-        <Button sx={{borderRadius:0,minHeight:"3vh" ,minWidth:"auto",fontSize:{md:"0.6rem",xl:"1rem"}}} 
-        fullWidth={true} variant="contained"
-        onClick={()=>{
-          openDetail(product);
-        }}>
-            <AddShoppingCart sx={{marginRight:"5px",fontSize:"2vh" }} />
-            Add
-        </Button>
+      //products screen
+      <Box>
+
+          <Box 
+          sx={{display:"flex",justifyContent:"space-between",alignItems:"baseline",flexDirection:"row",fontWeight:"bold",border:"solid black",borderWidth:"1px 0 0px 0"}}>
+            <Typography  sx={{fontWeight:"bold"}} >Price:</Typography>
+            <Typography sx={{fontWeight:"bold",color:"primary.dark"}}> {product.price}$</Typography>
+          </Box>
+          <Button sx={{borderRadius:0,minHeight:"3vh",minWidth:"auto",fontSize:{md:"0.6rem",xl:"1rem"}}} 
+          fullWidth={true} variant="contained"
+          onClick={()=>{
+            openDetail(product);
+          }}>
+              <AddShoppingCart sx={{marginRight:"5px",fontSize:"2vh" }} />
+              Add
+          </Button>
+        </Box>
         }
       </Box>
     </Box>

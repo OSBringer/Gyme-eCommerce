@@ -37,7 +37,7 @@ const Cart = () => {
   }
 
   return (
-    <Container sx={{bgcolor:"background.default",minHeight:"fit-content"}} maxWidth="full">
+    <Container sx={{bgcolor:"background.default",minHeight:"fit-content"}} maxWidth="full" >
       <Navigation/>
       <Stepper  sx={{marginTop:4}} activeStep={stepper} alternativeLabel>
           <Step expanded={true}  key={"checkout"}>

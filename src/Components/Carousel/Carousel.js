@@ -33,7 +33,7 @@ const CarouselComp = () => {
                 </Carousel.Caption>
             </Carousel.Item>
 
-            <Carousel.Item interval={999999} style={{width:"100%",height:"100%"}}>
+            <Carousel.Item interval={5000} style={{width:"100%",height:"100%"}}>
            
             <picture>
                 <source srcSet={require('../../assets/images/4 2000x400.jpg')} media="(min-width: 1400px)"/>

@@ -29,7 +29,7 @@ const Navigation = () => {
 
     return (
     <div>
-        <AppBar position="static" sx={{padding:0}}>
+        <AppBar position="static" sx={{maxWidth:"2000px",margin:"0 auto",padding:0}}>
             <Container   maxWidth="xl" sx={{padding:0}}>
                 <Toolbar disableGutters  sx={{justifyContent:"space-between"}} >
                     <Typography variant="h2" >
