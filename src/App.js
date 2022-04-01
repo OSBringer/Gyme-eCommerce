@@ -1,7 +1,7 @@
 import React from 'react';
 import  Home from './Screens/Home/Home.jsx';
 import './App.css';
-import { themeOptions } from './assets/theme';
+import { themeOptions,formLabelsTheme } from './assets/theme';
 import {  ThemeProvider } from '@mui/material/styles';
 import Products from './Screens/Products/Products';
 import Cart from './Screens/Cart/Cart'
@@ -30,6 +30,7 @@ function App() {
             <Route path="*" element={<NotFound/>} />
           </Routes>
           </BrowserRouter>
+        
         </ThemeProvider>
       </header>
     </div>

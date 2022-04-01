@@ -7,6 +7,7 @@ import Product from '../../Components/Product/Product';
 import Detail from '../../Components/Detail/Detail';
 import {getProducts,getPages} from '../../features/cart/cartSlice';
 
+
 const Products = ({products,pageCount}) => {
   const [openDetail,setOpenDetail]= useState({
       open:false,
@@ -31,37 +32,43 @@ const Products = ({products,pageCount}) => {
     <Container maxWidth={"full"} sx={{bgcolor:"background.default"}}>
         <Navigation/>
         <Detail product={openDetail.product} open={openDetail.open} handleDetail={handleDetail}/>
-        <Box sx={{ marginTop:"2vh",marginRight:"auto",marginLeft:"auto",flexDirection:"column",maxWidth:"50vw"}}>
-              <Grid
-                container
-                spacing={{ xs: 2, md: 3 }}
-                columns={{ xs: 4, sm: 8, md: 12 }}>
-                  {products.map((obj,index) => (
-                  <Grid item xs={2} sm={4} md={4} key={index} >
-                    <Product openDetail={(productDetail)=>handleDetail(productDetail)}cartScreen={false} product={obj}/>
-                  </Grid>
-                  ))
-                  }
-              </Grid>
-         </Box>
-         <Box  sx={{ display:"flex",marginY:"10vh",justifyContent:"center"}}>
-                <Pagination
-                page={page}
-                count={pageCount}
-                renderItem={(item) => (
-                  <PaginationItem
-                    size="small"
-                    component={Link}
-                    href={`/products/${category[category.length -1]}${item.page === 1 ? '' : `?page=${item.page}`}`}
-                    {...item}
-                  />
-                )}/>
+        {console.log(products)}
+        { products.length ? 
+        <>
+          <Box sx={{ marginTop:"2vh",marginRight:"auto",marginLeft:"auto",flexDirection:"column",maxWidth:"50vw"}}>
+                <Grid
+                  container
+                  spacing={{ xs: 2, md: 3 }}
+                  columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {products.map((obj,index) => (
+                    <Grid item xs={2} sm={4} md={4} key={index} >
+                      <Product openDetail={(productDetail)=>handleDetail(productDetail)}cartScreen={false} product={obj}/>
+                    </Grid>
+                    ))
+                    }
+                </Grid>
           </Box>
-          {/* <Snackbar open={openSnackbar} autoHideDuration={4000} onClose={handleClose}>
-            <Alert onClose={handleClose} severity={snackbarType} sx={{ width: '100%' }}>
-              {snackbarType==="success" ? "Succesfully added to cart": "Please select valid quantity and size" }
-            </Alert>
-          </Snackbar> */}
+          <Box  sx={{ display:"flex",marginY:"10vh",justifyContent:"center"}}>
+                  <Pagination
+                  page={page}
+                  count={pageCount}
+                  renderItem={(item) => (
+                    <PaginationItem
+                      size="small"
+                      component={Link}
+                      href={`/products/${category[category.length -1]}${item.page === 1 ? '' : `?page=${item.page}`}`}
+                      {...item}
+                    />
+                  )}/>
+            </Box> 
+          </>
+          :
+          <Box sx={{width:"100%",margin:"auto",width:"20vw"}}> 
+            ..ugh, this page is empty ... sorry
+            <img src={require('../../assets/images/empty.png')} alt="responsive image" className="d-block w-100"/>
+          </Box>
+          }
+
     </Container>
   )
 }

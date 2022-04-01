@@ -1,7 +1,7 @@
 import {React , useState} from 'react'
 import Product from '../../Components/Product/Product';
 import {useSelector,useDispatch} from "react-redux";
-import {Box,Container,Paper ,Grid,Link,TextField, Button} from '@mui/material';
+import {Box,Container,Paper ,Grid,Link,TextField, Button,Typography} from '@mui/material';
 import Detail from '../../Components/Detail/Detail';
 import { addToCart } from '../../features/cart/cartSlice';
 
@@ -49,23 +49,33 @@ const Checkout = ({setStepper}) => {
                     margin:4
                 }}>
                     <Product openDetail={(productDetail)=>handleDetail(productDetail)} cartScreen={true} product={obj}/>
-                    <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignContent:"space-between",marginLeft:"auto",textAlign:"start"}}>
-                    {obj.size && <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}><b>Size: </b>{obj.selectedSize}</Box>}
-                    <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
-                            <TextField
-                                id="quantity"
-                                label="Count"
-                                size='small'
-                                type="number"
-                                value={obj.quantity}
-                                defaultValue={obj.quantity}
-                                onChange={(e)=>handleQuantity(Object.assign({quantity:e.target.value},obj,{quantity:e.target.value}))}
-                                inputProps={{
-                                    min:1
-                                }}
-                            />
-                    </div>
-                    <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}><b>Price: </b>{obj.price}$</Box>
+                    <Box sx={{display:"flex",fontSize:"2.5vh",flexDirection:"column",alignItems:"space-between",marginLeft:"auto",textAlign:"start"}}>
+                        {obj.size &&
+                        <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}>
+                            <Typography  sx={{fontWeight:"bold"}} >Size:</Typography>
+                            <Typography sx={{fontWeight:"bold",color:"primary.dark"}}> {obj.selectedSize}</Typography>
+                        </Box>}
+                        <Box sx={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
+                                <TextField
+                                    sx={{width:"60%"}}
+                                    id="quantity"
+                                    label="Count"
+                                    size='small'
+                                    type="number"
+                                    value={obj.quantity}
+                                    defaultValue={obj.quantity}
+                                    onChange={(e)=>handleQuantity(Object.assign({quantity:e.target.value},obj,{quantity:e.target.value}))}
+                                    InputProps={{
+                                        style:{textAlign:"left"},
+                                        inputProps: { min: 0, max: 20 }
+                                    }}
+                                />
+                                 <Typography sx={{fontWeight:"bold",color:"primary.dark"}}> {obj.quantity}</Typography>
+                        </Box>
+                        <Box  sx={{display:"flex",fontSize:"2.5vh",flexDirection:"row",justifyContent:"space-between"}}>
+                            <Typography  sx={{fontWeight:"bold"}} >Price:</Typography>
+                            <Typography sx={{fontWeight:"bold",color:"primary.dark"}}> {obj.price}$</Typography>
+                        </Box>
                     </Box>
                 </Box>
             ))

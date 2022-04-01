@@ -39,7 +39,7 @@ const Cart = () => {
   return (
     <Container sx={{bgcolor:"background.default",minHeight:"fit-content"}} maxWidth="full" >
       <Navigation/>
-      <Stepper  sx={{marginTop:4}} activeStep={stepper} alternativeLabel>
+      <Stepper  sx={{maxWidth:"2000px",margin:"0 auto",marginTop:4}} activeStep={stepper} alternativeLabel>
           <Step expanded={true}  key={"checkout"}>
             <StepButton className={style.stepButton} component={Link} href='/cart/checkout' >
               <StepLabel>Cart</StepLabel>

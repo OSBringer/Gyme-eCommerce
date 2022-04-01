@@ -1,5 +1,16 @@
 import { createTheme } from '@mui/material/styles';
+
 export const themeOptions = createTheme({
+  overrides: {
+    MuiFormLabel: {
+      asterisk: {
+        color: '#db3131',
+        '&$error': {
+          color: '#db3131'
+        },
+      }
+    }
+  },
   palette: {
     type: 'light',
     primary: {
@@ -20,4 +31,17 @@ export const themeOptions = createTheme({
       secondary: '#959CE5',
     },
   },
+  
 });
+export const formLabelsTheme = createTheme({
+  overrides: {
+    MuiFormLabel: {
+      asterisk: {
+        color: '#db3131',
+        '&$error': {
+          color: '#db3131'
+        },
+      }
+    }
+  }
+})

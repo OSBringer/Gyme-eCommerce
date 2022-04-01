@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box,Container,FormControl ,Link,Checkbox, Button} from '@mui/material';
-import {LinkedIn,GitHub,Mail} from '@mui/icons-material';
+import {LinkedIn,GitHub,Mail,Phone,Work,Build,AutoAwesome} from '@mui/icons-material';
 function Footer() {
   return (
     <Box sx={{
@@ -19,25 +19,24 @@ function Footer() {
        <Box sx={{width:"100%",bgcolor:"primary.main"}}>
          © Gyme s.r.o.
        </Box>
-       
-       <Box  sx={{display:"grid",flexDirection:"column",width:"100%", margin:"auto",gridTemplateRows:"1fr 1fr",gridTemplateColumns:"1fr 1fr 1fr"}}>
+       <Box  textAlign={"left"}  sx={{display:"grid",fontSize:"1.5rem",flexDirection:"column",paddingBottom:4,width:"100%", margin:"auto",gridTemplateRows:"1fr 1fr",gridTemplateColumns:"1fr 1fr 1fr"}}>
             <Box sx={{fontWeight:"bold",alignSelf:"end"}}> Contact us</Box>
             <Box sx={{fontWeight:"bold",alignSelf:"end"}}> About me</Box>
-            <Box sx={{fontWeight:"bold",alignSelf:"end"}}> Contact us</Box>
-            <Box  sx={{display:"flex", justifyContent:"center",flexDirection:"column",gridRow:2 }} gridColumn={1} >
-              <Link>Contact</Link>
-              <Link>Contact</Link>
-              <Link>Contact</Link>
+            <Box sx={{fontWeight:"bold",alignSelf:"end"}}> About site</Box>
+            <Box  sx={{display:"flex",textAlign:"justify", justifyContent:"center",flexDirection:"column",gridRow:2 }} gridColumn={1} >
+              <Link><Work/>Carier</Link>
+              <Link><Mail/>support@gyme.com</Link>
+              <Link><Phone/>+421912345678</Link>
             </Box>
-            <Box textAlign={"left"} sx={{margin:"0 auto"}}  gridColumn={2}>
-              <Box><Mail/> bhlavienka@gmail.com</Box>
-              <Box><LinkedIn/>Boris Hlavienka</Box>
-              <Box><GitHub/>OSBringer</Box>
+            <Box sx={{display:"flex", justifyContent:"center",flexDirection:"column",gridRow:2 }} gridColumn={2}>
+              <Link  href={"mailto: bhlavienka@gmail.com"}><Mail/>bhlavienka@gmail.com</Link>
+              <Link href={"https://www.linkedin.com/in/boris-hlavienka-567527163/"}><LinkedIn/>Boris Hlavienka</Link>
+              <Link href={"https://github.com/OSBringer"}><GitHub/>OSBringer</Link>
             </Box>
-            <Box gridColumn={3}>
-              <Box>Contact</Box>
-              <Box>Contact</Box>
-              <Box>Contact</Box>
+            <Box sx={{display:"flex", justifyContent:"center",flexDirection:"column",gridRow:2 }} gridColumn={3}>
+              <Link  ><AutoAwesome/>Motivation</Link>
+              <Link href={"https://stackshare.io/osbringer/gyme-ecommerce"}><Build/>Tech stack</Link>
+              <Link href={"https://github.com/OSBringer/Gyme-eCommerce"}><GitHub/>GitHub</Link>
             </Box>
        </Box>
     </Box>

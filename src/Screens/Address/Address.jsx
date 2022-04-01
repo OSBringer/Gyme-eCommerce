@@ -1,4 +1,5 @@
-import {React, useState,useEffect} from 'react'
+import {React, useState,useEffect} from 'react';
+import style from "./Address.module.scss";
 import {Container,FormControl,FormGroup ,TextField,Checkbox,Box,Link, Button,Grid} from '@mui/material';
 import {CheckCircle} from '@mui/icons-material';
 import {Navigate} from 'react-router-dom';
@@ -37,13 +38,14 @@ const Address = ({confirmationScreen}) => {
 
 
   return (
-    <Container maxWidth="full">
+    <Container  maxWidth="full">
       <Grid  sx={{alignItems:"center",justifyContent:"space-between"}}container columns={2}>
         <Grid sx={{width:{xs:"100%",md:"auto"}}}item key={"form"}>
         <form   onSubmit={handleSubmit}> 
           <fieldset style={{minWidth:"40vw",gap:3,display:"flex",flexDirection:"column"}}disabled={confirmationScreen}>
           <FormControl  margin="normal" variant="filled" component="fieldset"  >
               <TextField
+              className={style.email}
               sx={{bgcolor:"background.secondary"}}
               disabled={confirmationScreen}
               required
