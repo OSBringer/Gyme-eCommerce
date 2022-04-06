@@ -1,10 +1,17 @@
-import React from 'react'
+import {React,useState} from 'react'
 import {Box,Container,FormControl ,Link,Checkbox, Button} from '@mui/material';
+import Motivation from "../Motivation/Motivation";
 import {LinkedIn,GitHub,Mail,Phone,Work,Build,AutoAwesome} from '@mui/icons-material';
 function Footer() {
+  const [openMotivation,setOpenMotivation]=useState(false);
+  const handleMotivation = () => { 
+    setOpenMotivation(!openMotivation)
+  }
+
   return (
     <Box sx={{
         display:"flex",
+        overflow:"hidden",
         flexDirection:"column",
         maxWidth:"2000px",
         border:"solid black",
@@ -16,6 +23,7 @@ function Footer() {
         bgcolor:"secondary.main",
         maxHeight:"40vh",
         }}>
+      <Motivation open={openMotivation}  handleMotivation={handleMotivation}/>
        <Box sx={{width:"100%",bgcolor:"primary.main"}}>
          © Gyme s.r.o.
        </Box>
@@ -34,7 +42,7 @@ function Footer() {
               <Link href={"https://github.com/OSBringer"}><GitHub/>OSBringer</Link>
             </Box>
             <Box sx={{display:"flex", justifyContent:"center",flexDirection:"column",gridRow:2 }} gridColumn={3}>
-              <Link  ><AutoAwesome/>Motivation</Link>
+              <Link sx={{cursor:"pointer"}} onClick={handleMotivation}  ><AutoAwesome/>Motivation</Link>
               <Link href={"https://stackshare.io/osbringer/gyme-ecommerce"}><Build/>Tech stack</Link>
               <Link href={"https://github.com/OSBringer/Gyme-eCommerce"}><GitHub/>GitHub</Link>
             </Box>

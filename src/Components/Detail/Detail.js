@@ -147,7 +147,7 @@ const Detail = ({product,open,handleDetail}) => {
                             </Button>
                         </Box>
                 <Box >
-                    <Box  sx={{display:"block",padding:"1vw",textAling:"left",fontSize:"1.5vh",minWidth:"20vw",maxWidth:"auto",gridColumnStart:"3"}}>
+                    <Box  sx={{display:"block",padding:"1vw",textAlign:"left",fontSize:"1.5vh",minWidth:"20vw",maxWidth:"auto",gridColumnStart:"3"}}>
                         {product.description}
                     </Box>
                 </Box>
